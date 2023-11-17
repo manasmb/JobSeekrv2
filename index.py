@@ -2,10 +2,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash,session
 from authlib.common.security import generate_token
 
-from models import *
+
 import requests
-from authlib.integrations.flask_client import OAuth
-import os
+
+
 from bs4 import BeautifulSoup
 import re
 app = Flask(__name__)
