@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, {{ user_name }}!
+</h1>
+<form action="{{ url_for('jobs') }}" method = "post">
+  <label for="role">Role:</label><br>
+  <input type="text" id="role" name="role" value="{{ role }}"><br>
+  <label for="skill">Skill:</label><br>
+  <input type="text" id="skill" name="skill" value="{{ skill }}"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<h3> Here is a list of customized jobs for you:</h3>
+<ul>
+{% for title, link in job_list %}
+
+    <li class = 'jobTitle'>{{ title }}</li>
+
+<a  href="{{ link }}"><li class='links'>Click here!</li></a><br>
+{% endfor %}
+</ul>
+{% endblock %}
