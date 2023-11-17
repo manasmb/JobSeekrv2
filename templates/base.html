@@ -15,32 +15,20 @@
 </head>
 
 <body class="mainBod">
-    <section class="hero is-primary is-fullheight">
 
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a href="{{ url_for('index') }}" class="navbar-item">
-                                Home
-                            </a>
-                            <a href="{{ url_for('jobs') }}" class="navbar-item">
-                                Jobs
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+<section >
 
-        <div class="hero-body">
-            <div class="container has-text-centered">
-               {% block content %}
-               {% endblock %}
-            </div>
-        </div>
+       <nav id="nav-1">
+  <a class="link-1" href="{{ url_for('index') }}">Home</a>
+  <a class="link-1" href="{{ url_for('jobs') }}">Jobs</a>
+  <a class="link-1" href="#">About</a>
+        </nav>
     </section>
+
+<section>
+    {% block content %}
+               {% endblock %}
+</section>
 </body>
 
 </html>
