@@ -1,25 +1,63 @@
 
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  background-color: #FFFFFF;
+  background-color: #DEF2F1;
 }
 
 mainBod {
-  background-color: #FFFFFF;
+background-color: #DEF2F1;
+
+}
+
+.title {
+	font-family: Raleway;
+	color: #17262A;
+}
+
+.subtitle {
+	color: #435559;
 }
 
 .nav1 {
   margin-top: 18px;
   padding: 24px;
   text-align: center;
+	font-family: Raleway;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   background: #3fa46a;
+}
+
+.header-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+
+	text-align: center;
+  /*border: 3px solid green;*/
+  padding: 10px;
+}
+
+.login-block {
+position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+	text-align: center;
+  /*border: 3px solid green;*/
+  padding: 10px;
+
+
 }
 
 .login-btn {
     justify-content: center;
     flex-direction: row;
     display: flex;
+	margin: auto;
     background-color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
@@ -48,7 +86,7 @@ mainBod {
 
 
 /* .nav-1 {
-  
+
 } */
 
 .link-1 {
@@ -66,6 +104,7 @@ mainBod {
 .link-1:hover {
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
+	color: #ffffff;
   padding: 6px 0;
 }
 
@@ -146,5 +185,3 @@ mainBod {
 	margin: 0.5rem 0;
 	width: 100%;
 }
-
-
