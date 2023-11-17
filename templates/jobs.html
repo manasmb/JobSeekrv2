@@ -4,9 +4,20 @@
 <h1 class="title">
   Welcome, {{ user_name }}!
 </h1>
-    <div class="container right-panel-active">
+<div class="row">
+<form action="{{ url_for('jobs') }}" class="form" id="form1" method = "post">
+  <span>
+    <input class="basic-slide" id="role" name="role" value="{{ role }}" /><label for="role">Role</label>
+  </span>
+  <span>
+    <input class="basic-slide" id="skill" name="skill" value="{{ skill }}" /><label for="skill">Skill</label>
+  </span>
+	<button class="btn">Search</button>
+</form>
+</div>
+<!--     <div class="container right-panel-active">
 	<!-- Sign Up -->
-	<div class="container__form container--signup" >
+<!-- 	<div class="container__form container--signup" >
 		<form action="{{ url_for('jobs') }}" class="form" id="form1" method = "post">
 			<h2 class="form__title">Enter your choice!</h2>
             <label for="role">Role:</label>
@@ -16,8 +27,8 @@
 
 			<button class="btn">Search</button>
 		</form>
-	</div>
-    </div>
+	</div> -->
+<!--     </div> --> -->
 <h3> Here is a list of customized jobs for you:</h3>
 <ul>
 {% for title, link in job_list %}
