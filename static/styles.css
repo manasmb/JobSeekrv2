@@ -8,6 +8,14 @@ mainBod {
   background-color: #FFFFFF;
 }
 
+.nav-1 {
+  margin-top: 18px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  background: #3fa46a;
+}
+
 .login-btn {
     justify-content: center;
     flex-direction: row;
@@ -38,14 +46,7 @@ mainBod {
 
 /* @import url(https://fonts.googleapis.com/css?family=Raleway); */
 
-.nav-1 {
-  margin-top: 18px;
-  padding: 24px;
-  text-align: center;
-/*   font-family: Raleway; */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
- background: #3fa46a;
-}
+
 /* .nav-1 {
   
 } */
