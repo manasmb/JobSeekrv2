@@ -18,7 +18,9 @@ def index():
 @app.route('/jobs', methods=['GET','POST'])
 def jobs():
     URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+(%22data%22+OR+%22analyst%22)+US+Python+(%22Intern%22+OR+%22Internship%22)&sca_esv=581602149&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKkZia_9G9XsCQtTucNyjc6sZc7QBw:1700201257908&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwiwupigr8qCAxUJGlkFHZWuCHUQpwV6BAgBEAk&biw=1920&bih=945&dpr=1'
-    role = 'Data Analyst'
+    URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+(%22Data%22+OR+%22Scientist%22)+US+Python+(%22Intern%22+OR+%22Internship%22)&sca_esv=581602149&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKkZia_9G9XsCQtTucNyjc6sZc7QBw:1700201257908&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwiwupigr8qCAxUJGlkFHZWuCHUQpwV6BAgBEAk&biw=1920&bih=945&dpr=1'
+
+    role = 'Data Scientist'
     skill = 'Python'
     if request.method=='POST':
         role = request.form.get('role')
