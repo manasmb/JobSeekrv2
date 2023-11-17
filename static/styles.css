@@ -44,10 +44,11 @@ nav {
   text-align: center;
 /*   font-family: Raleway; */
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+ background: #3fa46a;
 }
-.nav-1 {
-  background: #3fa46a;
-}
+/* .nav-1 {
+  
+} */
 
 .link-1 {
   transition: 0.3s ease;
