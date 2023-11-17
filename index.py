@@ -17,8 +17,8 @@ def index():
 
 @app.route('/jobs', methods=['GET','POST'])
 def jobs():
-    URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22Data Analyst%22+%22(US)+OR+(United+states)%22+SKILL+%22(Intern)+OR+(Internship)%22&sca_esv=576140894&sxsrf=AM9HkKlILxCrhS6DSvta8vIMXbBU58x7pw:1698180369525&source=lnt&tbs=qdr:TIME&sa=X&ved=2ahUKEwj1jMLtxo-CAxXYD1kFHXpxD1oQpwV6BAgBEAg&biw=1872&bih=912&dpr=1'
-    role = 'Data Scientist'
+    URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22data+analyst%22+US+%22+Python+%22(Internship)+OR+(Intern)%22&sca_esv=583240805&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKmoqu9oqngMc_3OHT-esuYdMhn6Aw:1700200290916&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwjk-IvTq8qCAxX0F1kFHY4pDxMQpwV6BAgBEAk&biw=1920&bih=945&dpr=1#ip=1'
+    role = 'Data Analyst'
     skill = 'Python'
     if request.method=='POST':
         role = request.form.get('role')
@@ -27,6 +27,7 @@ def jobs():
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+ROLE+internship+United+States+US+SKILL&sca_esv=576140894&sxsrf=AM9HkKnsclYm6PewKze55SEGdHUUEoEyyw:1698182424439&source=lnt&tbs=qdr:TIME&sa=X&ved=2ahUKEwil9a_Bzo-CAxXTMVkFHVQwB80QpwV6BAgBEAg&biw=1872&bih=912&dpr=1'
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+Role+SKILL+internship+OR+intern+United+States&sca_esv=576140894&sxsrf=AM9HkKmX1L3SERNYiWn-8PFpqHb5XK_GwQ:1698183507591&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwi1xu7F0o-CAxUfKFkFHWJrCXwQpwV6BAgBEAk&biw=1872&bih=912&dpr=1'
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22ROLE%22+%22(US)+OR+(United+states)%22+SKILL+%22(Intern)+OR+(Internship)%22&sca_esv=576140894&sxsrf=AM9HkKlILxCrhS6DSvta8vIMXbBU58x7pw:1698180369525&source=lnt&tbs=qdr:TIME&sa=X&ved=2ahUKEwj1jMLtxo-CAxXYD1kFHXpxD1oQpwV6BAgBEAg&biw=1872&bih=912&dpr=1'
+        URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22ROLE%22+US+%22+SKILL+%22(Internship)+OR+(Intern)%22&sca_esv=583240805&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKmoqu9oqngMc_3OHT-esuYdMhn6Aw:1700200290916&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwjk-IvTq8qCAxX0F1kFHY4pDxMQpwV6BAgBEAk&biw=1920&bih=945&dpr=1#ip=1'
 
         URL = URL.replace("ROLE", role)
         URL = URL.replace("SKILL", skill)
