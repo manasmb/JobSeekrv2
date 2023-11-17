@@ -15,11 +15,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# @app.route('/jobs', methods=['GET','POST'])
+@app.route('/jobs', methods=['GET','POST'])
 # def jobs():
 #     URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22ROLE%22+%22(US)+OR+(United+states)%22+SKILL+%22(Intern)+OR+(Internship)%22&sca_esv=576140894&sxsrf=AM9HkKlILxCrhS6DSvta8vIMXbBU58x7pw:1698180369525&source=lnt&tbs=qdr:TIME&sa=X&ved=2ahUKEwj1jMLtxo-CAxXYD1kFHXpxD1oQpwV6BAgBEAg&biw=1872&bih=912&dpr=1'
-#     role = 'Data Scientist'
-#     skill = 'Python'
+    role = 'Data Scientist'
+    skill = 'Python'
 #     if request.method=='POST':
 #         role = request.form.get('role')
 #         skill = request.form.get('skill')
@@ -87,5 +87,6 @@ def index():
 
 #             all_data.append(each_job)
 
-
-#     return render_template('jobs.html', job_list = all_data, role = role, skill = skill)
+    all_data = ['Manas', 'www.manas.com']
+    
+    return render_template('jobs.html', job_list = all_data, role = role, skill = skill)
