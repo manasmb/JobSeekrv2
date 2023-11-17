@@ -17,7 +17,7 @@ def index():
 
 @app.route('/jobs', methods=['GET','POST'])
 def jobs():
-    URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22data+analyst%22+US+%22+Python+%22(Internship)+OR+(Intern)%22&sca_esv=583240805&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKmoqu9oqngMc_3OHT-esuYdMhn6Aw:1700200290916&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwjk-IvTq8qCAxX0F1kFHY4pDxMQpwV6BAgBEAk&biw=1920&bih=945&dpr=1#ip=1'
+    URL = 'https://www.google.com/search?q=site%3Amyworkdayjobs.com+%7C+site%3Alever.co+%7C+site%3Agreenhouse.io+data+analyst+US+Python+%28%22Intern%22+OR+%22Internship%22%29&sca_esv=581602149&rlz=1C1RXQR_enIN973IN973&biw=1920&bih=945&tbs=qdr%3Ad&sxsrf=AM9HkKmKZ3vfw2OwbpfzxUlisESkbIu8vQ%3A1700200561998&ei=cQBXZezDPO2f5NoPqOCCoAI&ved=0ahUKEwiswK3UrMqCAxXtD1kFHSiwACQQ4dUDCBA&uact=5&oq=site%3Amyworkdayjobs.com+%7C+site%3Alever.co+%7C+site%3Agreenhouse.io+data+analyst+US+Python+%28%22Intern%22+OR+%22Internship%22%29&gs_lp=Egxnd3Mtd2l6LXNlcnAibXNpdGU6bXl3b3JrZGF5am9icy5jb20gfCBzaXRlOmxldmVyLmNvIHwgc2l0ZTpncmVlbmhvdXNlLmlvIGRhdGEgYW5hbHlzdCBVUyBQeXRob24gKCJJbnRlcm4iIE9SICJJbnRlcm5zaGlwIilIAFAAWABwAHgAkAEAmAEAoAEAqgEAuAEDyAEA-AEB4gMEGAAgQQ&sclient=gws-wiz-serp'
     role = 'Data Analyst'
     skill = 'Python'
     if request.method=='POST':
@@ -28,6 +28,7 @@ def jobs():
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+Role+SKILL+internship+OR+intern+United+States&sca_esv=576140894&sxsrf=AM9HkKmX1L3SERNYiWn-8PFpqHb5XK_GwQ:1698183507591&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwi1xu7F0o-CAxUfKFkFHWJrCXwQpwV6BAgBEAk&biw=1872&bih=912&dpr=1'
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22ROLE%22+%22(US)+OR+(United+states)%22+SKILL+%22(Intern)+OR+(Internship)%22&sca_esv=576140894&sxsrf=AM9HkKlILxCrhS6DSvta8vIMXbBU58x7pw:1698180369525&source=lnt&tbs=qdr:TIME&sa=X&ved=2ahUKEwj1jMLtxo-CAxXYD1kFHXpxD1oQpwV6BAgBEAg&biw=1872&bih=912&dpr=1'
         URL = 'https://www.google.com/search?q=site:myworkdayjobs.com+%7C+site:lever.co+%7C+site:greenhouse.io+%22ROLE%22+US+%22+SKILL+%22(Internship)+OR+(Intern)%22&sca_esv=583240805&rlz=1C1RXQR_enIN973IN973&sxsrf=AM9HkKmoqu9oqngMc_3OHT-esuYdMhn6Aw:1700200290916&source=lnt&tbs=qdr:w&sa=X&ved=2ahUKEwjk-IvTq8qCAxX0F1kFHY4pDxMQpwV6BAgBEAk&biw=1920&bih=945&dpr=1#ip=1'
+        URL = 'https://www.google.com/search?q=site%3Amyworkdayjobs.com+%7C+site%3Alever.co+%7C+site%3Agreenhouse.io+ROLE+US+SKILL+%28%22Intern%22+OR+%22Internship%22%29&sca_esv=581602149&rlz=1C1RXQR_enIN973IN973&biw=1920&bih=945&tbs=qdr%3Ad&sxsrf=AM9HkKmKZ3vfw2OwbpfzxUlisESkbIu8vQ%3A1700200561998&ei=cQBXZezDPO2f5NoPqOCCoAI&ved=0ahUKEwiswK3UrMqCAxXtD1kFHSiwACQQ4dUDCBA&uact=5&oq=site%3Amyworkdayjobs.com+%7C+site%3Alever.co+%7C+site%3Agreenhouse.io+data+analyst+US+Python+%28%22Intern%22+OR+%22Internship%22%29&gs_lp=Egxnd3Mtd2l6LXNlcnAibXNpdGU6bXl3b3JrZGF5am9icy5jb20gfCBzaXRlOmxldmVyLmNvIHwgc2l0ZTpncmVlbmhvdXNlLmlvIGRhdGEgYW5hbHlzdCBVUyBQeXRob24gKCJJbnRlcm4iIE9SICJJbnRlcm5zaGlwIilIAFAAWABwAHgAkAEAmAEAoAEAqgEAuAEDyAEA-AEB4gMEGAAgQQ&sclient=gws-wiz-serp'
 
         URL = URL.replace("ROLE", role)
         URL = URL.replace("SKILL", skill)
