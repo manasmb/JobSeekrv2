@@ -105,3 +105,39 @@ def jobs():
 
     
     return render_template('jobs.html', job_list = all_data, role = role, skill = skill)
+
+@app.route('/google/')
+def google():
+
+    GOOGLE_CLIENT_ID = '326367558877-otku242huvrbm6ho9fs4l6i9vf4p5vuc.apps.googleusercontent.com'
+    GOOGLE_CLIENT_SECRET = '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'
+
+    CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
+    oauth.register(
+        name='google',
+        client_id=GOOGLE_CLIENT_ID,
+        client_secret=GOOGLE_CLIENT_SECRET,
+        server_metadata_url=CONF_URL,
+        client_kwargs={
+            'scope': 'openid email profile'
+        }
+    )
+
+    # Redirect to google_auth function
+    redirect_uri = url_for('google_auth', _external=True)
+    print(redirect_uri)
+    session['nonce'] = generate_token()
+    return oauth.google.authorize_redirect(redirect_uri, nonce=session['nonce'])
+
+
+
+@app.route('/google/auth/')
+def google_auth():
+    token = oauth.google.authorize_access_token()
+    user = oauth.google.parse_id_token(token, nonce=session['nonce'])
+    session['user'] = user
+    # user = oauth.google.parse_id_token(token)
+    print(user['email'], user['name'])
+    user_name = user['name']
+
+    return redirect(url_for('jobs'))
