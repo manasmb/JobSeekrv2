@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash,session
 from authlib.common.security import generate_token
 from authlib.integrations.flask_client import OAuth
-
+import os
 import requests
 
 
@@ -10,6 +10,10 @@ from bs4 import BeautifulSoup
 import re
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'beyond_course_scope'
+
+
+app.secret_key = os.urandom(12)
 oauth = OAuth(app)
 
 @app.route('/')
