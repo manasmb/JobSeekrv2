@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, flash,session
 from authlib.common.security import generate_token
-
+from authlib.integrations.flask_client import OAuth
 
 import requests
 
