@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import re
 app = Flask(__name__)
 
+oauth = OAuth(app)
 
 @app.route('/')
 def index():
