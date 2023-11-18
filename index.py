@@ -108,7 +108,7 @@ def jobs():
     user_name = request.args['user_name']
     # all_data = [['SkillBridge Intern at Skylight United States', 'https://boards.greenhouse.io/skylighthq/jobs/4239496005%3Fgh_jid%3D4239496005'], ['2024 Long-Term Operations Internship at United States Golf Association Lancaster, PA', 'https://boards.greenhouse.io/unitedstatesgolfassociation/jobs/6966547002'], ['People Internship - Summer 2024 at Pagaya New York, NY', 'https://boards.greenhouse.io/pagaya/jobs/5784515003'], ['Long-Term USWO Championship Administration Intern at United States Golf Association Lancaster, PA', 'https://boards.greenhouse.io/unitedstatesgolfassociation/jobs/6929848002'], ['2024 U.S. Open Marketing Internship at United States Golf Association Pinehurst, North Carolina', 'https://boards.greenhouse.io/unitedstatesgolfassociation/jobs/7005038002'], ['2024 USSO Long-Term Championship Administration Internship at United States Golf Association Newport, RI', 'https://boards.greenhouse.io/unitedstatesgolfassociation/jobs/6981244002'], ['2024 Cybersecurity Summer Internship at Schonfeld New York, New York, United States', 'https://boards.greenhouse.io/schonfeld/jobs/5452804']]
 
-    
+    user_name = user_name.split(' ')[0]
     return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name = user_name)
 
 @app.route('/google/')
