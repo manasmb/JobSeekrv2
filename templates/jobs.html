@@ -1,43 +1,78 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Welcome, {{ user_name }}!
-</h1>
-<div class="row">
-<form action="{{ url_for('jobs') }}" class="form" id="form1" method = "post">
-  <span>
-    <input class="basic-slide" id="role" name="role" value="{{ role }}" /><label for="role">Role</label>
-  </span>
-  <span>
-    <input class="basic-slide" id="skill" name="skill" value="{{ skill }}" /><label for="skill">Skill</label>
-  </span>
-	<button class="btn">Search</button>
-</form>
-</div>
-<!--     <div class="container right-panel-active">
-	<!-- Sign Up -->
-<!-- 	<div class="container__form container--signup" >
-		<form action="{{ url_for('jobs') }}" class="form" id="form1" method = "post">
-			<h2 class="form__title">Enter your choice!</h2>
-            <label for="role">Role:</label>
-			<input type="text" id="role" name="role" value="{{ role }}"/>
-            <label for="skill">Skill(Enter only one):</label>
-			<input type="text" id="skill" name="skill" value="{{ skill }}" />
 
-			<button class="btn">Search</button>
+<div class = body-form>
+    <div class="container" id="container">
+
+	<div class="form-container sign-in-container">
+		<form action="{{ url_for('jobs') }}" method = "post">
+			<h1>About you!</h1>
+
+			<span>Please enter your desired job details:</span>
+			<input type="text" id="role" name="role"  placeholder="Role" value="{{ role }}" />
+			<input type="text" id="skill" name="skill"  placeholder="Skill"  value="{{ skill }}"/>
+
+			<button>Search</button>
 		</form>
-	</div> -->
-<!--     </div> --> -->
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Hello, </h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, !</h1>
+				<p>Please enter your details on the left and we shall find the freshest jobs in the market for you!</p>
+{#				<button class="ghost" id="signUp">texst</button>#}
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+{#<h1 class="title">#}
+{#  Welcome, {{ user_name }}!#}
+{#</h1>#}
+{#<form action="{{ url_for('jobs') }}" method = "post">#}
+{#  <label for="role">Role:</label><br>#}
+{#  <input type="text" id="role" name="role" value="{{ role }}"><br>#}
+{#  <label for="skill">Skill:</label><br>#}
+{#  <input type="text" id="skill" name="skill" value="{{ skill }}"><br><br>#}
+{#  <input type="submit" value="Submit">#}
+{##}
+{#</form>#}
+{#    <div class="container right-panel-active">#}
+{#	<!-- Sign Up -->#}
+{#	<div class="container__form container--signup" >#}
+{#		<form action="{{ url_for('jobs') }}" class="form" id="form1" method = "post">#}
+{#			<h2 class="form__title">Enter your choice!</h2>#}
+{#            <label for="role">Role:</label>#}
+{#			<input type="text" id="role" name="role" value="{{ role }}"/>#}
+{#            <label for="skill">Skill(Enter only one):</label>#}
+{#			<input type="text" id="skill" name="skill" value="{{ skill }}" />#}
+{##}
+{#			<button class="btn">Search</button>#}
+{#		</form>#}
+{#	</div>#}
+{#    </div>#}
+
+<div>
+
+</div>
 <h3> Here is a list of customized jobs for you:</h3>
 <ul>
 {% for title, link in job_list %}
 
     <li class = 'jobTitle'>{{ title }}</li>
 
-<a  href="{{ link }}" target="_blank"><li class='links'>Click here!</li></a><br>
+<a  href="{{ link }}"><li class='links'>Click here!</li></a><br>
 {% endfor %}
 </ul>
-<a  href="https://www.buymeacoffee.com/manasmb" target="_blank">Liked this website? Click here to buy me a coffee!</li></a><br>
-	
+
+
+
+
 {% endblock %}
