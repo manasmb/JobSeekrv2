@@ -109,7 +109,7 @@ def jobs():
         user_name = request.args['user_name']
         user_name = user_name.split(' ')[0]
     except:
-        flash('Please login to access this page!')
+        flash('Please login to access this page!', 'error')
         return redirect(url_for('index'))
     else:
         print(user_name)
