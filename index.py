@@ -109,11 +109,12 @@ def jobs():
         user_name = request.args['user_name']
         user_name = user_name.split(' ')[0]
     except:
+        flash('Please login to access this page!')
         return redirect(url_for('index'))
     else:
         print(user_name)
         return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name=user_name)
-
+    
     user_name = user_name.split(' ')[0]
     return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name = user_name)
 
