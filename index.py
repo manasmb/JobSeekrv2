@@ -105,18 +105,17 @@ def jobs():
             each_job.append(url[1])
             all_data.append(each_job)
             
-    try:
-        user_name = request.args['user_name']
-        user_name = user_name.split(' ')[0]
-    except:
-        flash('Please login to access this page!', 'error')
-        return redirect(url_for('index'))
+    user_name = 'User'
+    if 'username' in session:
+        user_name = session['username'].split(' ')[0]
+
+    if 'logged_in' in session:
+        if session['logged_in']==True:
+            return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name=user_name)
+        else:
+            return redirect(url_for('index'))
     else:
-        print(user_name)
-        return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name=user_name)
-    
-    user_name = user_name.split(' ')[0]
-    return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name = user_name)
+        return redirect(url_for('index'))
 
 @app.route('/google/')
 def google():
@@ -151,5 +150,6 @@ def google_auth():
     # user = oauth.google.parse_id_token(token)
     print(user['email'], user['name'])
     user_name = user['name']
-
-    return redirect(url_for('jobs', user_name = user_name))
+    session['logged_in'] = True
+    session['username'] = user_name
+    return redirect(url_for('jobs'))
