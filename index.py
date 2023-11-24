@@ -115,6 +115,7 @@ def jobs():
         else:
             return redirect(url_for('index'))
     else:
+        return render_template('jobs.html', job_list = all_data, role = role, skill = skill, user_name=user_name)
         return redirect(url_for('index'))
 
 @app.route('/google/')
