@@ -433,12 +433,9 @@ footer {
 }
 
 .container1 {
-
-
   position: relative;
   top: 25px; right: 0; bottom: 0; left: 0;
   margin: auto;
-
   display: grid;
   place-items: center;
 
@@ -488,8 +485,6 @@ footer {
   padding-right: 0px;
   display: grid;
   grid-template-columns: 10fr 1fr;
-  // background-color: lightblue;
-
   grid-gap: 10px;
   border: 1px solid transparent;
   cursor: pointer;
