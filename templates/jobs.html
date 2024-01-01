@@ -62,17 +62,27 @@
 <div>
 
 </div>
-<h3> Here is a list of customized jobs for you:</h3>
-<ul>
-{% for title, link in job_list %}
+<div class="container1">
+  <div class="items">
+    <div class="items-head">
+      <p>Here is a list of customized jobs for you:</p>
+      <hr>
+    </div>
 
-    <li class = 'jobTitle'>{{ title }}</li>
+    <div class="items-body">
+        {% for title, link in job_list %}
+            <a class="linkItems" href="{{ link }}">
+        <div class="items-body-content">
+        <span class="jobTitleFinal">{{title}}</span>
+        <i class="fa fa-angle-right"></i>
+      </div>
+        </a>
+        {% endfor %}
 
-<a  href="{{ link }}"><li class='links'>Click here!</li></a><br>
-{% endfor %}
-</ul>
 
-
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
