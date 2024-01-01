@@ -66,7 +66,7 @@ def jobs():
         url_pattern = r'href="/url\?q=(https?://[^&]+)&'
         url_match = re.search(url_pattern, info)
         each_job = []
-        if (url_match) and ((str(text) != 'Learn more')) and ((str(text) != 'Sign in')):
+        if (url_match) and ((str(text) != 'Learn more')) and ((str(text) != 'Sign in')) and ((str(text) != 'Maps')):
             # print(text)
             extracted_url = url_match.group(1)
 
