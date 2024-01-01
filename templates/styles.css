@@ -186,7 +186,6 @@ mainBod {
   padding-right: 0px;
   display: grid;
   grid-template-columns: 10fr 1fr;
-  // background-color: lightblue;
 
   grid-gap: 10px;
   border: 1px solid transparent;
